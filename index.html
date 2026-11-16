@@ -1,0 +1,547 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio | พัณณิตา ท่ายาง</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --burgundy: #641b2e;
+  --wine: #842b43;
+  --red: #a9435b;
+  --cream: #fff9f5;
+  --pink: #f1dce0;
+  --text: #38252b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Kanit', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.8;
+}
+
+/* Navigation */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(100,27,46,.96);
+  backdrop-filter: blur(15px);
+  padding: 14px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  margin: 5px 8px;
+  transition: .3s;
+}
+
+nav a:hover {
+  color: #efbdc9;
+}
+
+/* Hero */
+.hero {
+  min-height: 90vh;
+  padding: 60px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background:
+    radial-gradient(circle at top, #f1dce0, transparent 60%),
+    linear-gradient(135deg,#fff9f5,#f4e4e5);
+}
+
+.profile {
+  width: 220px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 120px 120px 35px 35px;
+  border: 7px solid white;
+  box-shadow: 0 0 0 4px var(--wine),
+              0 15px 40px #641b2e35;
+}
+
+.hero h1 {
+  color: var(--burgundy);
+  font-size: clamp(30px,6vw,48px);
+  margin-top: 25px;
+}
+
+.hero h2 {
+  color: var(--wine);
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.hero p {
+  color: #88636c;
+  margin-top: 10px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 30px;
+  background: linear-gradient(135deg,var(--wine),var(--burgundy));
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: .3s;
+  box-shadow: 0 5px 20px #641b2e30;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+}
+
+/* Sections */
+section {
+  padding: 65px 7%;
+  scroll-margin-top: 70px;
+}
+
+.title {
+  text-align: center;
+  font-size: 28px;
+  color: var(--burgundy);
+  margin-bottom: 35px;
+}
+
+.title::after {
+  content: "";
+  display: block;
+  width: 65px;
+  height: 4px;
+  background: var(--red);
+  border-radius: 10px;
+  margin: 10px auto;
+}
+
+.card {
+  max-width: 900px;
+  margin: 18px auto;
+  padding: 28px;
+  border-radius: 20px;
+  background: white;
+  border: 1px solid #ead5d9;
+  box-shadow: 0 8px 25px #641b2e0c;
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px #641b2e18;
+}
+
+.card h3 {
+  color: var(--wine);
+  margin-bottom: 10px;
+}
+
+/* Personal Information */
+.info {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 15px;
+}
+
+.info-item {
+  padding: 18px;
+  background: #fbf0f1;
+  border-radius: 13px;
+  border-left: 4px solid var(--wine);
+}
+
+.info-item small {
+  color: var(--red);
+  display: block;
+}
+
+.info-item p {
+  font-weight: 500;
+}
+
+/* GPA */
+.gpa {
+  text-align: center;
+  padding: 30px;
+  background: linear-gradient(135deg,#641b2e,#a9435b);
+  border-radius: 20px;
+  color: white;
+}
+
+.gpa strong {
+  font-size: 48px;
+  display: block;
+}
+
+/* Education */
+.timeline {
+  border-left: 3px solid var(--wine);
+  padding-left: 25px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.timeline-item::before {
+  content: "";
+  width: 13px;
+  height: 13px;
+  position: absolute;
+  left: -33px;
+  top: 9px;
+  background: var(--red);
+  border-radius: 50%;
+}
+
+/* Cards */
+.grid {
+  max-width: 950px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 20px;
+}
+
+.grid .card {
+  width: 100%;
+  margin: 0;
+}
+
+.icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+/* University */
+.university {
+  background: linear-gradient(135deg,#641b2e,#8e304a);
+  color: white;
+  text-align: center;
+  padding: 45px 25px;
+  border-radius: 25px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.university h2 {
+  font-size: 27px;
+  margin-bottom: 15px;
+}
+
+.university p {
+  color: #f8e5e9;
+}
+
+/* Footer */
+footer {
+  background: var(--burgundy);
+  color: white;
+  text-align: center;
+  padding: 35px 15px;
+}
+
+footer p {
+  color: #efcbd3;
+  font-size: 13px;
+}
+
+@media(max-width:650px) {
+  nav {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .logo {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav a {
+    font-size: 11px;
+    margin: 3px;
+  }
+
+  .info, .grid {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 45px 5%;
+  }
+
+  .hero {
+    min-height: 75vh;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MENU -->
+<nav>
+  <div class="logo">MY PORTFOLIO ♡</div>
+  <div>
+    <a href="#about">ข้อมูลส่วนตัว</a>
+    <a href="#education">การศึกษา</a>
+    <a href="#inspiration">แรงบันดาลใจ</a>
+    <a href="#works">ผลงาน</a>
+    <a href="#hobby">งานอดิเรก</a>
+  </div>
+</nav>
+
+<!-- PROFILE -->
+<div class="hero">
+
+  <img
+    src="4A04A2E2-B946-44F3-AE0F-8824701078ED.jpeg"
+    class="profile"
+    alt="รูปโปรไฟล์ พัณณิตา"
+  >
+
+  <p>WELCOME TO MY PORTFOLIO</p>
+
+  <h1>พัณณิตา ท่ายาง</h1>
+
+  <h2>STUDENT PORTFOLIO</h2>
+
+  <p>แฟ้มสะสมผลงานเพื่อการศึกษาต่อระดับมหาวิทยาลัย</p>
+
+  <a href="#about" class="btn">เข้าสู่แฟ้มสะสมผลงาน ♡</a>
+
+</div>
+
+<!-- PERSONAL -->
+<section id="about">
+
+  <h2 class="title">ข้อมูลส่วนตัว</h2>
+
+  <div class="card">
+    <div class="info">
+
+      <div class="info-item">
+        <small>ชื่อ-นามสกุล</small>
+        <p>นางสาวพัณณิตา ท่ายาง</p>
+      </div>
+
+      <div class="info-item">
+        <small>ชื่อเล่น</small>
+        <p> เเบม </p>
+      </div>
+
+      <div class="info-item">
+        <small>ระดับการศึกษา</small>
+        <p>มัธยมศึกษาตอนปลาย</p>
+      </div>
+
+      <div class="info-item">
+        <small>ความสนใจ</small>
+        <p>การเมือง การปกครอง และสังคม</p>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- GPA -->
+<section id="grade">
+
+  <h2 class="title">ผลการเรียน</h2>
+
+  <div class="card">
+    <div class="gpa">
+      <p>GRADE POINT AVERAGE</p>
+      <strong> 3.44 GPA</strong>
+      <p>เกรดเฉลี่ยสะสม</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+
+  <h2 class="title">ประวัติการศึกษา</h2>
+
+  <div class="card">
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <h3>ระดับประถมศึกษา</h3>
+        <p>สถานศึกษา : โรงเรียนบ้านห้วยรื่น </p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>ระดับมัธยมศึกษาตอนต้น</h3>
+        <p>สถานศึกษา : โรงเรียนทุ่งใหญ่เฉลิมอนุสรณ์รัชมังคลาภิเษก </p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>ระดับมัธยมศึกษาตอนปลาย</h3>
+        <p>สถานศึกษา : โรงเรียนทุ่งใหญ่เฉลิมอนุสรณ์รัชมังคลาภิเษก</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- INSPIRATION -->
+<section id="inspiration">
+
+  <h2 class="title">แรงบันดาลใจ</h2>
+
+  <div class="card">
+    <h3>ก้าวตามความฝัน สร้างอนาคตด้วยตัวเอง</h3>
+
+    <p>
+      ฉันมีความตั้งใจที่จะศึกษาต่อในสาขารัฐประศาสนศาสตร์
+      เนื่องจากมีความสนใจเกี่ยวกับการบริหารงานภาครัฐ
+      การเมือง การปกครอง และการพัฒนาสังคม
+      ฉันต้องการเรียนรู้การทำงานเพื่อส่วนรวม
+      และนำความรู้ที่ได้รับไปประยุกต์ใช้ให้เกิดประโยชน์
+      ต่อชุมชนและประเทศชาติในอนาคต
+    </p>
+  </div>
+
+</section>
+
+<!-- UNIVERSITY -->
+<section id="university">
+
+  <h2 class="title">มหาวิทยาลัยที่ใฝ่ฝัน</h2>
+
+  <div class="university">
+
+    <p>MY DREAM UNIVERSITY</p>
+
+    <h2>มหาวิทยาลัยราชภัฏสงขลา</h2>
+
+    <p>คณะมนุษยศาสตร์และสังคมศาสตร์</p>
+
+    <p>สาขาวิชารัฐประศาสนศาสตร์</p>
+
+    <br>
+
+    <p>
+      มุ่งมั่นที่จะพัฒนาความรู้ ความสามารถ
+      และทักษะการบริหารงานภาครัฐ
+      เพื่อเติบโตเป็นบุคลากรที่มีคุณภาพของสังคม
+    </p>
+
+  </div>
+
+</section>
+
+<!-- WORKS -->
+<section id="works">
+
+  <h2 class="title">ผลงานและกิจกรรม</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="icon">🏆</div>
+      <h3>ผลงานที่ 1</h3>
+      <p> เป็นดรัมเมเยอร์ </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📜</div>
+      <h3>เกียรติบัตร</h3>
+      <p> จิตอาสา </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎓</div>
+      <h3>กิจกรรม</h3>
+      <p>ปลูกป่าชายเลน</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🌟</div>
+      <h3>ความสามารถ</h3>
+      <p> เล่นวอเลย์บอล </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- HOBBY -->
+<section id="hobby">
+
+  <h2 class="title">งานอดิเรกและความสนใจ</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="icon">📚</div>
+      <h3>อ่านหนังสือ</h3>
+      <p>เพิ่มพูนความรู้และเปิดมุมมองใหม่ ๆ</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎧</div>
+      <h3>ฟังเพลง</h3>
+      <p>ผ่อนคลายและสร้างความสุขให้ตัวเอง</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🌍</div>
+      <h3>ติดตามข่าวสาร</h3>
+      <p>เรียนรู้เรื่องราวทางสังคมและการเมือง</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">💡</div>
+      <h3>เรียนรู้สิ่งใหม่</h3>
+      <p>พัฒนาตนเองและเพิ่มประสบการณ์</p>
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+  <h2>THANK YOU ♡</h2>
+  <p>ขอบคุณที่เข้าชมแฟ้มสะสมผลงานของฉัน</p>
+  <p>PORTFOLIO | พัณณิตา ท่ายาง</p>
+</footer>
+
+</body>
+</html>
